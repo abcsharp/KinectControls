@@ -62,6 +62,5 @@ namespace KinectControls
 			LeftHandLocation=new Point();
 			return;
 		}
-
 	}
 }

@@ -69,6 +69,9 @@
     <Compile Include="HandVolume.cs" />
     <Compile Include="JointDistance.cs" />
     <Compile Include="JointIntersection.cs" />
+    <Compile Include="JointSlider.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

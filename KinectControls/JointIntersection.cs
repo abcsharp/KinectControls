@@ -110,6 +110,7 @@ namespace KinectControls
 			DestJoints=destJoints;
 			IsEnabled=true;
 			Intersects=false;
+			if(jointBounds==null) throw new ArgumentNullException();
 			JointBounds=jointBounds;
 			return;
 		}
