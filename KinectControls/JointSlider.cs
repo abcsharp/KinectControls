@@ -65,7 +65,7 @@ namespace KinectControls
 								var sliderValue=((firstHittingPoint.X-SliderBounds.Left)/SliderBounds.Width)*Maximum;
 								Value=(int)sliderValue;
 							}else{
-								var sliderValue=((firstHittingPoint.Y-SliderBounds.Bottom)/SliderBounds.Height)*Maximum;
+								var sliderValue=((SliderBounds.Height-firstHittingPoint.Y+SliderBounds.Top)/SliderBounds.Height)*Maximum;
 								Value=(int)sliderValue;
 							}
 						}
