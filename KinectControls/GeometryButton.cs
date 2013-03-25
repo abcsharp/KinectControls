@@ -44,7 +44,7 @@ namespace KinectControls
 						int hittingJointCount=0;
 						JointType firstHittingJoint=JointType.Head;
 						foreach(JointType joint in Joints){
-							var depthImagePoint=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[joint].Position,DepthImageFormat.Resolution640x480Fps30);
+							var depthImagePoint=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[joint].Position,DepthImageFormat.Resolution640x480Fps30);
 							var HitTestResult=Geometry.FillContains(new Point(depthImagePoint.X,depthImagePoint.Y));
 							if(HitTestResult){
 								if(hittingJointCount==0) firstHittingJoint=joint;

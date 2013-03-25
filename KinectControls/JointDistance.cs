@@ -30,8 +30,8 @@ namespace KinectControls
 						return;
 					}
 					IsTracking=true;
-					var point1=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[Joint1].Position,DepthImageFormat.Resolution640x480Fps30);
-					var point2=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[Joint2].Position,DepthImageFormat.Resolution640x480Fps30);
+					var point1=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[Joint1].Position,DepthImageFormat.Resolution640x480Fps30);
+					var point2=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[Joint2].Position,DepthImageFormat.Resolution640x480Fps30);
 					Joint1Location=new Point(point1.X,point1.Y);
 					Joint2Location=new Point(point2.X,point2.Y);
 					Distance=(int)Math.Sqrt((point2.X-point1.X)*(point2.X-point1.X)+(point2.Y-point1.Y)*(point2.Y-point1.Y));

@@ -31,8 +31,8 @@ namespace KinectControls
 							return;
 						}
 						IsTracking=true;
-						var point1=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[JointType.HandRight].Position,DepthImageFormat.Resolution640x480Fps30);
-						var point2=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[JointType.HandLeft].Position,DepthImageFormat.Resolution640x480Fps30);
+						var point1=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[JointType.HandRight].Position,DepthImageFormat.Resolution640x480Fps30);
+						var point2=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[JointType.HandLeft].Position,DepthImageFormat.Resolution640x480Fps30);
 						RightHandLocation=new Point(point1.X,point1.Y);
 						LeftHandLocation=new Point(point2.X,point2.Y);
 						MiddlePoint=new Point((point1.X+point2.X)/2.0,(point1.Y+point2.Y)/2.0);

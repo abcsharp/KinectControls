@@ -43,11 +43,11 @@ namespace KinectControls
 						}
 						int intersectJointCount=0;
 						var firstIntersectJoint=JointType.Head;
-						var depthImagePoint=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[MainJoint].Position,DepthImageFormat.Resolution640x480Fps30);
+						var depthImagePoint=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[MainJoint].Position,DepthImageFormat.Resolution640x480Fps30);
 						var mainJointRect=JointBounds;
 						mainJointRect.Offset(depthImagePoint.X,depthImagePoint.Y);
 						foreach(JointType joint in DestJoints){
-							depthImagePoint=sensor.MapSkeletonPointToDepth(firstTrackedSkeleton.Joints[joint].Position,DepthImageFormat.Resolution640x480Fps30);
+							depthImagePoint=sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(firstTrackedSkeleton.Joints[joint].Position,DepthImageFormat.Resolution640x480Fps30);
 							var destJointRect=JointBounds;
 							destJointRect.Offset(depthImagePoint.X,depthImagePoint.Y);
 							var IntersectTestResult=mainJointRect.IntersectsWith(destJointRect);
